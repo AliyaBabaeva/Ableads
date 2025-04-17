@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ableads</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #000;
+      line-height: 1.6;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    header {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+    }
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 1.125rem;
+      text-align: center;
+      max-width: 600px;
+      margin-bottom: 2rem;
+    }
+    button {
+      background-color: #6a0dad;
+      color: #fff;
+      border: none;
+      padding: 0.75rem 2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #550d99;
+    }
+    .calendly-container {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0,0,0,0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .calendly-embed {
+      width: 90%;
+      height: 90%;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+    }
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+
+  <header>Ableads</header>
+
+  <h1>Consigue clientes todos los días con Meta Ads.</h1>
+  <p>Hacemos campañas en Meta Ads para negocios que venden servicios de ticket alto. Si no conseguimos resultados, no cobramos.</p>
+  
+  <button onclick="openCalendly()">Agenda una llamada</button>
+
+  <div class="calendly-container" id="calendlyModal">
+    <div class="calendly-embed">
+      <div class="close-btn" onclick="closeCalendly()">×</div>
+      <iframe src="https://calendly.com/ableads/30min" width="100%" height="100%" frameborder="0"></iframe>
+    </div>
+  </div>
+
+  <script>
+    function openCalendly() {
+      document.getElementById("calendlyModal").style.display = "flex";
+    }
+    function closeCalendly() {
+      document.getElementById("calendlyModal").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
